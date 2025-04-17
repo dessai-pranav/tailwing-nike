@@ -6,13 +6,14 @@ import CustomerReviews from "./section/CustomerReviews.jsx";
 import Services from "./section/Services.jsx";
 import Subscribe from "./section/Subscribe.jsx";
 import SuperQuality from "./section/SuperQuality.jsx";
+import  Nav from "./components/Nav.jsx";
 
 
 
 const App = () => (
 
        <main className= "realtive">
-           { /* <Nav/> */}
+           <Nav/>
         <section className="xl:padding-1 wide:padding-r padding-b">
             <Hero/>
         </section>
@@ -29,7 +30,7 @@ const App = () => (
                <SpecialOffer/>
            </section>
            <section className= " bg-pale-blue padding">
-               customer reviews
+               <CustomerReviews/>
            </section>
            <section className= " padding-x sm:py-32 py-16 w-full">
                <Subscribe/>
