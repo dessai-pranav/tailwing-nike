@@ -1,11 +1,15 @@
 import Button from "../components/button.jsx";
 import {arrowRight} from "../nike_landing_assets/assets/icons/index.js";
-import {statistics} from "../constants/index.js";
+import {shoes,statistics} from "../constants/index.js";
+import {bigShoe1} from "../nike_landing_assets/assets/images/index.js";
+import ShoeCard from "../components/ShoeCard.jsx";
 
 const Hero = () => {
     return (
-        <section id="home"
-                 className="w-full flex x1:flex-row flex-col justify-center min-h-screen gap-10 max-conatiner ">
+        <section
+            id='home'
+            className='w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-container'
+        >
             <div className='relative xl:w-2/5 flex flex-col justify-center items-start w-full  max-xl:padding-x pt-28'>
                 <p className='text-xl font-montserrat text-coral-red'>
                     Our Summer collections
@@ -23,18 +27,41 @@ const Hero = () => {
                     your active life.
                 </p>
 
-                <Button label = "Shop now"
-          iconURL ={arrowRight}/>
-                <div className="flex justify-starts items-start flex-wrap w-full mt-20 gap-16 ">
-                    {statistics.map((statistics) => (
-                        <div key={statistics.label}>
-                            <p>{statistics.value}</p>
-                            <p>{statistics.label}</p>
+                <Button label='Shop now' iconURL={arrowRight} />
+
+                <div className='flex justify-start items-start flex-wrap w-full mt-20 gap-16'>
+                    {statistics.map((stat, index) => (
+                        <div key={index}>
+                            <p className='text-4xl font-palanquin font-bold'>{stat.value}</p>
+                            <p className='leading-7 font-montserrat text-slate-gray'>
+                                {stat.label}
+                            </p>
                         </div>
                     ))}
                 </div>
             </div>
-        </section>
+
+            <div className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center'>
+                <img
+                    src={bigShoe1}
+                    alt='shoe colletion'
+                    width={610}
+                    height={502}
+                    className='object-contain relative z-10'
+                />
+                <div >
+                    {shoes.map((shoe)=>(
+                        <div key={shoe}>
+                            <ShoeCard
+                            imgURL={shoe}
+                            changeBigShoeImage = {()=>{}}
+                            bigShoeImg=""
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+            </section>
 
     )
 }
