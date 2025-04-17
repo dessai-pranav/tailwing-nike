@@ -1,6 +1,6 @@
 import Hero from "./section/Hero.jsx";
 import SpecialOffer from "./section/SpecialOffer.jsx";
-import Popular from "./section/Popular.jsx";
+import PopularProducts from "./section/PopularProducts.jsx";
 import Footer from "./section/Footer.jsx";
 import CustomerReviews from "./section/CustomerReviews.jsx";
 import Services from "./section/Services.jsx";
@@ -14,11 +14,11 @@ const App = () => (
 
        <main className= "realtive">
            <Nav/>
-        <section className="xl:padding-1 wide:padding-r padding-b">
+        <section className="xl:padding-l wide:padding-r padding-b">
             <Hero/>
         </section>
            <section className= " padding">
-               <Popular/>
+               <PopularProducts/>
            </section>
            <section className= " padding">
                <SuperQuality/>
